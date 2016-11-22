@@ -1,0 +1,4 @@
+--- 
+- 
+  jenkins_plugin: "name=pipeline-plugin state=present"
+  name: "install build pipeline plugin"

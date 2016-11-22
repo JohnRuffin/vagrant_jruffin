@@ -1,6 +1,8 @@
----
-- hosts: all
-  become: True
-  roles:
-  - git
-  - geerlingguy.jenkins
+--- 
+- 
+  become: true
+  hosts: all
+  roles: 
+    - git
+    - geerlingguy.nodejs
+    - geerlingguy.jenkins
