@@ -1,0 +1,4 @@
+--- 
+- 
+  apt: "name=git state=present"
+  name: "install git distributed version control"
