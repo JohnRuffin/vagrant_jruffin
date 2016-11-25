@@ -53,7 +53,9 @@
 - name: Check if seed job exists
   set_fact:
     jenkins_post_seed_job_exists: "{{ jenkins_post_seed_name in (jenkins_jobs.content|from_json).jobs|map(attribute='name')|list }}"
-
+    until: jenkins_post_seed_job_exists == true
+    retries: 10
+    delay: 5
 
 - name: Run your job
   uri:
