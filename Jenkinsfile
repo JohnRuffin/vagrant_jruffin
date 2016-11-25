@@ -1,10 +1,7 @@
-node('node') {
-    
+node {
     stage 'CHECKOUT'
-    echo 'In checkout stage'
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/reactjs/redux.git']]])
 
     stage 'BUILD'
-    echo 'In build stage'
-
-  
+    sh 'npm build'
 }

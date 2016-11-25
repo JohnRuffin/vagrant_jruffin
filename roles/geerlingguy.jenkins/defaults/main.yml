@@ -10,7 +10,9 @@ jenkins_home: /var/lib/jenkins
 jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
-jenkins_plugins: [workflow-aggregator, github]
+jenkins_plugins: [workflow-aggregator, github, git, 
+  job-dsl, workflow-cps, build-pipeline-plugin, 
+  conditional-buildstep, external-monitor-job, ws-cleanup]
 jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
