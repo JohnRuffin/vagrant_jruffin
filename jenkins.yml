@@ -6,4 +6,4 @@
     - git
     - geerlingguy.nodejs
     - geerlingguy.jenkins
-    - ansible-jenkins-pipeline
+    - jenkins-pipeline

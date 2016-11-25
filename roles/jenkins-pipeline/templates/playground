@@ -1,0 +1,21 @@
+pipelineJob('jruffPipelineJob') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/reactjs/redux.git')
+          }
+          branch('master')
+        }
+      }
+      scriptPath('Jenkinsfile')
+    }
+  }
+}
+
+
+
+http://localhost:8080/administrativeMonitor/slaveToMasterAccessControl/rule/
+      
+

@@ -1,0 +1,16 @@
+pipelineJob('v5jruffPipelineJob') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/JohnRuffin/vagrant_jruffin')
+          }
+          branch('master')
+        }
+      }
+      scriptPath('Jenkinsfile')
+    }
+  }
+}
+      
