@@ -53,7 +53,9 @@
 - name: Check if seed job exists
   set_fact:
     jenkins_post_seed_job_exists: "{{ jenkins_post_seed_name in (jenkins_jobs.content|from_json).jobs|map(attribute='name')|list }}"
-    until: jenkins_post_seed_job_exists == true
+    until: jenkins_post_seed_job_exists
+    retries: 10
+    delay: 5
 
 
 - name: Run your job
@@ -64,8 +66,8 @@
     url: "http://127.0.0.1:8080/job/{{ jenkins_post_seed_name }}/build"
     method: POST
     status_code: 201
-  when: jenkins_post_seed_job_exists
 
 
-- name: Restart Jenkins if necessary
+- name: Reload Jenkins
   service: name=jenkins state=restarted
+
