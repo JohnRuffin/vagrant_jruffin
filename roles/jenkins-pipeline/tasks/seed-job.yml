@@ -48,3 +48,19 @@
     method: POST
     status_code: 201
   when: jenkins_seed_job_updated|success
+
+
+- name: Check if seed job exists
+  set_fact:
+    jenkins_post_seed_job_exists: "{{ jenkins_post_seed_name in (jenkins_jobs.content|from_json).jobs|map(attribute='name')|list }}"
+
+
+- name: Run your job
+  uri:
+    user: admin
+    password: admin
+    force_basic_auth: yes
+    url: "http://127.0.0.1:8080/job/{{ jenkins_post_seed_name }}/build"
+    method: POST
+    status_code: 201
+  when: jenkins_post_seed_job_exists

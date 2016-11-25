@@ -1,4 +1,5 @@
 ---
 jenkins_seed_name: pipeline-seed
+jenkins_post_seed_name: jruffinPipelineJob
 jenkins_seed_template: seed-config.xml.j2
 jenkins_job_template: jobs.groovy.j2
